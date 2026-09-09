@@ -1,0 +1,16 @@
+{
+  "name": "production-docker-app",
+  "version": "1.0.0",
+  "description": "Docker Jenkins CI/CD project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0"
+  }
+}

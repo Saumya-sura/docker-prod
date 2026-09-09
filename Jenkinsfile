@@ -16,21 +16,21 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 dir('app') {
-                    sh 'npm ci'
+                    bat 'npm ci'
                 }
             }
         }
         stage('Test') {
             steps {
                 dir('app') {
-                    sh 'npm test'
+                    bat 'npm test'
                 }
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh """
-                    docker build \
+                bat """
+                    docker build ^
                     -t ${IMAGE_NAME}:${IMAGE_TAG} .
                 """
             }
@@ -38,7 +38,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh """
+                bat """
                     docker push ${IMAGE_NAME}:${IMAGE_TAG}
                 """
             }
